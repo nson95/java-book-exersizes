@@ -1,4 +1,5 @@
 package util;
+import java.util.List;
 import java.util.Scanner;
 
 public class MyConsole {
@@ -16,6 +17,7 @@ public class MyConsole {
             }
             else {
                 printLine("Error - invalid int.");
+                sc.nextLine();
             }
         }
 
@@ -91,5 +93,24 @@ public class MyConsole {
     public static void printLine(String msg) {
     	System.out.println(msg);
     }
-    
+	public static String promptString(String prompt, List<String> validValues) {
+		String str = "";
+		boolean success = false;
+		while (!success) {
+			str = promptString(prompt);
+//			for (String s: validValues) {
+//				if (s.equalsIgnoreCase(str)) {
+//					success = true;
+//					break;
+//				}
+//			}
+			if (validValues.contains(str)) {
+				success = true;
+			}
+			else {
+				printLine("Invalid value. Try again.");
+			}
+		}
+		return str;
+	}
 }
