@@ -67,8 +67,8 @@ public class MyConsole {
         boolean isValid = false;
         while (!isValid) {
             result = promptString(prompt);
-            if (result.trim() != "") {
-                if (result == str1 || result == str2) {
+            if (result.trim().isEmpty()) {
+                if (result.equals(str1) || result.equals(str2)) {
                     isValid = true;
                 }
                 else {
