@@ -9,8 +9,9 @@ public class DiceRollerApp {
 		
 		int i = 0;
 		Random randy = new Random();
+		String choice = "y";
 		
-		
+		randy.nextInt(1,7);
 		
 		MyConsole.printLine("Goodbye");
 	}
